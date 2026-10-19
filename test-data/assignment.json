@@ -1,0 +1,33 @@
+{
+    "userPimpinanDepartemen": {
+        "username": "PIMPINANDKM001_MENENGAH",
+        "password": "Januari@2026"
+    },
+      "menu":{
+        "menu": "Assignment V2"
+    },
+
+    "assignedUser": {
+        "officer": "TRI"
+        },
+
+    "branchFilter": {
+        "branch": "KC Balaikota"
+        },
+
+    "kategoriSegmentFilter": {
+        "kategoriSegment": "Mikro KUR"},
+
+    "checkOfficerFilter": {
+        "checkOfficer": "Tidak Memiliki Officer"},
+
+    "namaNasabahFilter": {
+        "namaNasabah": "MUHAMMAD"},
+    "norekPinjamanFilter": {
+        "norekPinjaman": "108"},
+    "kolFilter": {
+        "kol": "2"     }
+    }
+    
+
+

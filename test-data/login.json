@@ -1,0 +1,15 @@
+{
+    "validUser": {
+        "username": "RMDKM003_MENENGAH",
+        "password": "Januari@2026"
+    },
+    "invalidPassword": {
+        "username": "RMDKM003_MENENGAH",
+        "password": "xxxxxx@2026"
+    },
+    "invalidUsername": {
+        "username": "RMDKM003_MENENGAHxx",
+        "password": "Januari@2026"
+    }
+}
+

@@ -1,0 +1,28 @@
+{
+  
+    "userDunner": {
+        "username": "RMDKM003_MENENGAH",
+        "password": "Januari@2026"
+    },
+      "navigateMenu": {
+        "menu": "Tasklist - Collection Pusat DKI V2"
+    },
+    "emergencyContact": {
+        "namaEmergencyContact": "Testing Nama Emergency Contact",
+        "noKontakEmergencyContact": "081234567890",
+        "alamatEmergencyContact": "Testing Alamat Emergency Contact",
+        "namaEmergencyContactEdit": "Edited Nama Emergency Contact",
+        "noKontakEmergencyContactEdit": "081234567891",
+        "alamatEmergencyContactEdit": "Edited Alamat Emergency Contact"
+    },
+    "agunan": {
+        "jenisAgunan": "TABUNGAN",
+        "namaPemilik": "Testing Nama Pemilik Agunan",
+        "alamatAgunan": "Testing Alamat Agunan",
+        "buktiKepemilikan": "Buku Tab.",
+        "keteranganAgunan": "Testing Keterangan Agunan",
+        "nilaiPengikatan": 100000000,
+        "nilaiPasar": 120000000,
+        "nilaiLikuidasi": 90000000
+    }
+}
