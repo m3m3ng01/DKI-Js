@@ -28,15 +28,15 @@ test.describe('Assignment To RM', () => {
         //await loginPage.retryIfCaptcha();
 
         // Assignment 10 debitur
-        await assignToRMPage.assignToRM10();
+      //  await assignToRMPage.assignToRM10();
         
        // pilih menu assignment
-        //await assignToRMPage.navigateMenuAssignment();
+        await assignToRMPage.navigateMenuAssignment();
 
         //Test Filter ALL
-        //await assignToRMPage.checkAllFilterOptions();
+        await assignToRMPage.checkAllFilterOptions();
         //Test Download Assignment Data
-       // await assignToRMPage.clickDownloadAssignmentData();
+        await assignToRMPage.clickDownloadAssignmentData();
         
 
 

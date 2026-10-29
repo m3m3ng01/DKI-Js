@@ -20,7 +20,7 @@ export default class BasePage{
 
     async getTodayDate(){
        // Ambil tanggal hari ini
-const today = new Date();
+        const today = new Date();
 
 // Format tanggal menjadi DDMMYYYY
 const day = String(today.getDate()).padStart(2, '0');

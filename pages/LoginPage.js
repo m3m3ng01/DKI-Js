@@ -1,4 +1,7 @@
 import { expect } from '@playwright/test';
+import envData from '../test-data/env.json';
+
+
 
 export default class LoginPage {
 
@@ -18,7 +21,7 @@ export default class LoginPage {
 
     async open() {
         await this.page.goto(
-            'https://collection-crms-site-jkt.skyworx.co.id/login',
+            envData.vue3.VUE_APP_API_URL,
             {
                 waitUntil: 'domcontentloaded'
             }
@@ -72,4 +75,3 @@ export default class LoginPage {
 }
 
 }
-

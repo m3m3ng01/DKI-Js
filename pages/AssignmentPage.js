@@ -1,9 +1,13 @@
 import { expect } from '@playwright/test';
 import assingmentData from '../test-data/assignment.json';
+import BasePage from './BasePage';
+import Alert from './AlertPage';
 
 export default class AssignToRM {
     constructor(page) {
         this.page = page;
+        this.basePage = new BasePage(page);
+        this.alertPage = new Alert(page);
 
          // Parent locator: Advance Search
         this.advanceSearch = page.locator('#assignment-advance-search');
@@ -94,12 +98,10 @@ this.officerFilter = this.advanceSearch
     }
 
     async clickDownloadAssignmentData() {
-        await this.btnExport.click();
-
-         const [download] = await Promise.all([
-             page.waitForEvent('download'),
-             assignToRMPage.btnExport.click()
-         ]);
+        const [download] = await Promise.all([
+            this.page.waitForEvent('download'),
+            this.btnExport.click()
+        ]);
 
         // Assertion: nama file hasil download tidak kosong
         expect(download.suggestedFilename()).not.toBe('');
@@ -107,13 +109,11 @@ this.officerFilter = this.advanceSearch
         // Assertion: nama file sesuai format yang diharapkan
         expect(download.suggestedFilename()).toContain('.xlsx');
 
-        await page.waitForTimeout(5000);
-        // // Screenshot
-        const dateString = await basePage.getTodayDate();
-        await page.screenshot({
+        const dateString = await this.basePage.getTodayDate();
+        await this.page.screenshot({
             path: `screenshots/TestDownloadData_${dateString}.png`,
-             fullPage: true
-         });
+            fullPage: true
+        });
     }
 
     async clickClearButton() {
@@ -176,8 +176,6 @@ this.officerFilter = this.advanceSearch
     }
 
     async assignToRM10() {
-        //klik sidebar menu assignment
-        await this.navigateMenuAssignment();
 
         //kecilkan ukuran window
         await this.page.evaluate(() => {
@@ -199,15 +197,13 @@ this.officerFilter = this.advanceSearch
             await this.page.locator('th.check-col input.form-check-input').count()
         );
 
-        await this.page.pilihRM('Renny (DC)');
+        await this.pilihRM('Renny (DC)');
        
         
         // // Verify Alert
-        const alertMessage = page.locator('#swal2-html-container');
+        const alertMessage = this.page.locator('#swal2-html-container');
 
         await expect(alertMessage).toBeVisible();
-        await this.page.waitForTimeout(8000);
-
         await expect(alertMessage).toHaveText('Debitur successfully assigned.');
 
         console.log(await alertMessage.innerText());
@@ -294,6 +290,7 @@ this.officerFilter = this.advanceSearch
 
         //Filter by Officer
         await this.clickSearchButton();
+        await this.page.waitForTimeout(2000);
         await this.clickClearButton();
         await this.filterByOfficer(assingmentData.assignedUser.officer);
         await this.page.locator('#assignment-advance-search button.btn-search').click();
