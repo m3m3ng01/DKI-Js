@@ -3,6 +3,8 @@ import BasePage from './BasePage';
 import Alert from './AlertPage';
 import adminData from '../test-data/parameterAdmin.json';
 import NamaGenerator from '../utils/generator.js';
+import { saveGeneratedData } from '../utils/dataStorage.js';
+
 
 
 export default class Parameter {
@@ -398,6 +400,12 @@ export default class Parameter {
         await this.page.screenshot({ path: `screenshots/AdminParameter/Aktivitas/submitAktivitas_${waktuTesting}.png` });
         await this.alertPage.okButton.click();
         
+        // Simpan data hasil generate
+        saveGeneratedData('aktivitas', {
+            nama: namaAktivitas,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
      async tambahPihakYangDihubungi() {
@@ -415,6 +423,11 @@ export default class Parameter {
         await this.page.screenshot({ path: `screenshots/AdminParameter/PihakYangDihubungi/submitPihakYangDihubungi_${waktuTesting}.png` });
         await this.alertPage.okButton.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
+        saveGeneratedData('pihakYangDihubungi', {
+            nama: namaPihakYangDihubungi,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
       async tambahHasilAktivitas() {
@@ -431,22 +444,32 @@ export default class Parameter {
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.page.screenshot({ path: `screenshots/AdminParameter/HasilAktivitas/submitHasilAktivitas_${waktuTesting}.png` });
         await this.alertPage.okButton.click();
+        saveGeneratedData('hasilAktivitas', {
+            nama: namaHasilAktivitas,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
      async tambahAlasanMenunggak() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaAlasanMenunggak = NamaGenerator.generateNamaAlasanMenunggak();
         await this.btnTambahAlasanMenunggak.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/AlasanMenunggak/tambahAlasanMenunggak_${waktuTesting}.png` });
         await this.namaAlasanMenunggakTambah.fill(namaAlasanMenunggak);
         await this.codeAlasanMenunggakTambah.fill(namaAlasanMenunggak);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/AlasanMenunggak/tambahAlasanMenunggak_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.page.waitForTimeout(3000); // Wait for the alert to appear
         await this.page.screenshot({ path: `screenshots/AdminParameter/AlasanMenunggak/submitAlasanMenunggak_${waktuTesting}.png` });
         await this.alertPage.okButton.click();
+        saveGeneratedData('alasanMenunggak', {
+            nama: namaAlasanMenunggak,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
     async tambahKJPP() {
@@ -461,76 +484,106 @@ export default class Parameter {
         await this.page.screenshot({ path: `screenshots/AdminParameter/AlasanMenunggak/tambahAlasanMenunggak_${waktuTesting}.png` });
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('kjpp', {
+            nama: namaKJPP,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
         async tambahBalaiLelang() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaBalaiLelang = NamaGenerator.generateNamaBalaiLelang();
         await this.btnTambahBalaiLelang.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/BalaiLelang/tambahBalaiLelang_${waktuTesting}.png` });
         await this.namaBalaiLelangTambah.fill(namaBalaiLelang);
         await this.codeBalaiLelangTambah.fill(namaBalaiLelang);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/BalaiLelang/tambahBalaiLelang_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('balaiLelang', {
+            nama: namaBalaiLelang,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
         async tambahKodetransaksi() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaKodetransaksi = NamaGenerator.generateNamaKodetransaksi();
         await this.btnTambahKodetransaksi.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/Kodetransaksi/tambahKodetransaksi_${waktuTesting}.png` });
         await this.namaKodetransaksiTambah.fill(namaKodetransaksi);
         await this.codeKodetransaksiTambah.fill(namaKodetransaksi);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/Kodetransaksi/tambahKodetransaksi_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('kodeTransaksi', {
+            nama: namaKodetransaksi,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
         async tambahJenisAgunan() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaJenisAgunan = NamaGenerator.generateNamaJenisAgunan();
         await this.btnTambahJenisAgunan.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/JenisAgunan/tambahJenisAgunan_${waktuTesting}.png` });
         await this.namaJenisAgunanTambah.fill(namaJenisAgunan);
         await this.codeJenisAgunanTambah.fill(namaJenisAgunan);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/JenisAgunan/tambahJenisAgunan_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('jenisAgunan', {
+            nama: namaJenisAgunan,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
     async tambahBuktiKepemilikan() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaBuktiKepemilikan = NamaGenerator.generateNamaBuktiKepemilikan();
         await this.btnTambahBuktiKepemilikan.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/BuktiKepemilikan/tambahBuktiKepemilikan_${waktuTesting}.png` });
         await this.namaBuktiKepemilikanTambah.fill(namaBuktiKepemilikan);
         await this.codeBuktiKepemilikanTambah.fill(namaBuktiKepemilikan);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/BuktiKepemilikan/tambahBuktiKepemilikan_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('buktiKepemilikan', {
+            nama: namaBuktiKepemilikan,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
      async tambahNoRekeningDebet() {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaNoRekeningDebet = NamaGenerator.generateNamaNoRekeningDebet();
         await this.btnTambahNoRekeningDebet.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/NoRekeningDebet/tambahNoRekeningDebet_${waktuTesting}.png` });
         await this.namaNoRekeningDebetTambah.fill(namaNoRekeningDebet);
         await this.codeNoRekeningDebetTambah.fill(namaNoRekeningDebet);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/NoRekeningDebet/tambahNoRekeningDebet_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('noRekeningDebet', {
+            nama: namaNoRekeningDebet,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 
 
@@ -538,13 +591,18 @@ export default class Parameter {
         const waktuTesting = NamaGenerator.generatetanggaltesting();
         const namaKodePlan = NamaGenerator.generateNamaKodePlan();
         await this.btnTambahKodePlan.click();
-        await this.page.waitForTimeout(3000); // Wait for the page to load
-        await this.page.screenshot({ path: `screenshots/AdminParameter/KodePlan/tambahKodePlan_${waktuTesting}.png` });
         await this.namaKodePlanTambah.fill(namaKodePlan);
         await this.codeKodePlanTambah.fill(namaKodePlan);
+        await this.page.waitForTimeout(3000); // Wait for the page to load
+        await this.page.screenshot({ path: `screenshots/AdminParameter/KodePlan/tambahKodePlan_${waktuTesting}.png` });
         await this.submitBtn.click();
         await this.page.waitForTimeout(3000); // Wait for the table to update
         await this.alertPage.confirmProceedButton.click();
         await this.alertPage.okButton.click();
+        saveGeneratedData('kodePlan', {
+            nama: namaKodePlan,
+            createdAt: new Date().toISOString(),
+            status: 'created'
+        });
     }
 }

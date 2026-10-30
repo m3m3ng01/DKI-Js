@@ -1,0 +1,35 @@
+{
+     "userSuperAdmin": {
+        "username": "AB86543210",
+        "password": "Januari@2026"
+     },
+      "menu":{
+        "menu": "Master Management"
+    },
+    "submenu" :{
+        "submenuAktivitas": "Aktivitas",
+        "submenuPihakYangDihubungi": "Pihak Yang Dihubungi",
+        "submenuHasilAktivitas": "Hasil Aktivitas",
+        "submenuAlasanMenunggak": "Alasan Menunggak",
+        "submenuDaftarKJPP": "Daftar KJPP",
+        "submenuBalaiLelang": "Daftar Balai Lelang",
+        "submenuKodetransaksi": "Kode Transaksi",
+        "submenuJenisAgunan" : "Jenis Agunan",
+        "submenuBuktiKepemilikan": "Bukti Kepemilikan",
+        "submenuNoRekeningDebet" : "No. Rekening Debet",
+        "submenuKodePlan": "Kode Plan"
+    },
+     "sub-submenu" :{
+        "sub-submenuAktivitas": "Approve Parameter Aktivitas",
+        "sub-submenuPihakYangDihubungi": "Approve Parameter Pihak Yang Dihubungi",
+        "sub-submenuHasilAktivitas": "Approve Parameter Hasil Aktivitas",
+        "sub-submenuAlasanMenunggak": "Approve Parameter Alasan Menunggak",
+        "sub-submenuDaftarKJPP": "Approve KJPP",
+        "sub-submenuBalaiLelang": "Approve Balai Lelang",
+        "sub-submenuKodetransaksi": "Approve Kode Transaksi",
+        "sub-submenuJenisAgunan": "Approve Jenis Agunan",
+        "sub-submenuBuktiKepemilikan": "Approve Bukti Kepemilikan",
+        "sub-submenuNoRekeningDebet": "Approve No. Rekening Debet",
+        "sub-submenuKodePlan": "Approve Kode Plan"
+    }
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "aktivitas": {
+            "nama": "Aktivitas_3010_133532",
+            "createdAt": "2026-10-30T06:35:42.623Z",
+            "status": "created"
+        }
+    },
+    {
+        "alasanMenunggak": {
+            "nama": "AlasanMenunggak_3010_133846",
+            "createdAt": "2026-10-30T06:38:56.166Z",
+            "status": "created"
+        }
+    }
+]

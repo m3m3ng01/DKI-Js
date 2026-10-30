@@ -38,12 +38,12 @@ test.describe('Parameter Management', () => {
        // await parameterPage.tambahPihakYangDihubungi();
 
     // pilih menu Hasil Aktivitas
-        await parameterPage.navigateMenuHasilAktivitas();
-        await parameterPage.tambahHasilAktivitas();
+     //   await parameterPage.navigateMenuHasilAktivitas();
+     //   await parameterPage.tambahHasilAktivitas();
     
     // pilih menu Alasan Menunggak
-    //    await parameterPage.navigateMenuAlasanMenunggak();
-    //    await parameterPage.tambahAlasanMenunggak();
+        await parameterPage.navigateMenuAlasanMenunggak();
+        await parameterPage.tambahAlasanMenunggak();
 
     // pilih menu Daftar KJPP
     //    await parameterPage.navigateMenuDaftarKJPP();
