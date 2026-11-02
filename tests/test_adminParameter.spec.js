@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-
 import LoginPage from '../pages/LoginPage';
 import Parameter from '../pages/AdminPage';
 import Alert from '../pages/AlertPage';
@@ -42,12 +41,12 @@ test.describe('Parameter Management', () => {
      //   await parameterPage.tambahHasilAktivitas();
     
     // pilih menu Alasan Menunggak
-        await parameterPage.navigateMenuAlasanMenunggak();
-        await parameterPage.tambahAlasanMenunggak();
+    //    await parameterPage.navigateMenuAlasanMenunggak();
+    //    await parameterPage.tambahAlasanMenunggak();
 
     // pilih menu Daftar KJPP
-    //    await parameterPage.navigateMenuDaftarKJPP();
-    //    await parameterPage.tambahKJPP();
+        await parameterPage.navigateMenuDaftarKJPP();
+        await parameterPage.tambahKJPP();
 
     // pilih menu Daftar Balai Lelang
     //    await parameterPage.navigateMenuBalaiLelang();
